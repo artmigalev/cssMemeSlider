@@ -48,7 +48,9 @@ img {
     height: 1rem;
     background: #000;
 }
-
+input[type=radio]:checked + label{
+    display: none;
+}
 
 
 .control_cont {
