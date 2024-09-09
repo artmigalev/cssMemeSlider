@@ -62,6 +62,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row-reverse;
+  
 }
 .pagination {
   width: 40%;
