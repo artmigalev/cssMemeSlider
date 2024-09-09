@@ -1,6 +1,6 @@
 const startIndex = 0;
 const pagination = document.querySelector(".pagination");
-const minionsText = ["hana, dul, sae", "pōlä nōlä matōkä", "Привет, папагена, tú le bélla cón la papaja"];
+const minionsText = ["Woo-hoo!", "Poopaye!", "Bana-na-na!", "Groo-groo-groo!"];
 
 pagination.addEventListener("click", handle);
 
@@ -8,6 +8,7 @@ function handle(event) {
   const click = event.target;
   const slides = document.querySelector(".slides");
   const pagination = document.querySelector(".pagination");
+  const textSlide = document.querySelector(".description-text");
   if (click.classList.contains("pagin-btn")) {
     // console.log("sl");
 
@@ -22,8 +23,8 @@ function handle(event) {
         console.log(btn);
         btn.classList.add("pagin-btn-active");
         slides.style.transform = `translateX(-${(Number(sl))*25}%)`
-        console.log(( sl));
-        console.log((sl+1)*25);
+        textSlide.textContent = minionsText[sl]
+
 
 
       }
