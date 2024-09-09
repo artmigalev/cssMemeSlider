@@ -5,7 +5,9 @@ const startIndex = 0;
 
 pagination.addEventListener('click', handle);
 
-function 
+function  handle{
+  
+}
 
 
 
