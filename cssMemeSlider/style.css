@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  background-color: #abc0c3;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.slider {
+  width: 80vw;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+.slides {
+  transform: translateX(0px);
+  transition: transform 1.5s ease-in;
+
+  max-width: max-content;
+  max-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.slide {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.footer-slider {
+  width: 80vw;
+  height: 10vh;
+
+  border-radius: 1.2rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 768px) and (min-width: 320px) {
+    flex-direction: column;
+    height: initial;
+  }
+}
+.pagination {
+  width: max-content;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 1.2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 768px) and (min-width: 320px) {
+
+  }
+
+}
+input {
+  display: none;
+}
+.btn-hover {
+  width: 5rem;
+  height: 5rem;
+  display: inline-block;
+  padding: 1rem;
+}
+.btn-hover:hover > label {
+  background-color: aliceblue;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+label {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 50%;
+  display: block;
+  transition: 0.6s ease-in-out;
+}
+label:hover {
+
+
+
+}
+
+.slider-description {
+  width: 36vw;
+  overflow: hidden;
+
+
+  height: -webkit-fill-available;
+  @media (max-width: 768px) and (min-width: 320px) {
+
+    transform: translateX(-60%);
+  }
+}
+.description-list {
+  padding: 0;
+  margin: 0;
+  transform: translateX(0px);
+  transition: transform 1.5s ease-in;
+  width: max-content;
+  height: 100%;
+
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.description-text {
+  list-style: none;
+  font-size: 2rem;
+  padding: 1rem;
+
+  width: 36vw;
+  display: inline-block;
+  @media (max-width: 768px) and (min-width: 320px) {
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+  }
+}
+
+#btn1:checked ~ .slider > .slides {
+  transform: translateX(0px);
+}
+#btn2:checked ~ .slider > .slides {
+  transform: translateX(-100%);
+}
+#btn3:checked ~ .slider > .slides {
+  transform: translateX(-200%);
+}
+#btn4:checked ~ .slider > .slides {
+  transform: translateX(-300%);
+}
+#btn1:checked ~ .footer-slider > .slider-description > .description-list {
+  transform: translateX(-0%);
+}
+#btn2:checked ~ .footer-slider > .slider-description > .description-list {
+  transform: translateX(-25%);
+}
+#btn3:checked ~ .footer-slider > .slider-description > .description-list {
+  transform: translateX(-50%);
+}
+#btn4:checked ~ .footer-slider > .slider-description > .description-list {
+  transform: translateX(-75%);
+}
