@@ -15,7 +15,7 @@ body {
 }
 .main {
   width: 80vw;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,9 +56,13 @@ body {
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) and (min-width: 320px) {
+    flex-direction: column;
+    height: initial;
+  }
 }
 .pagination {
-  width: 37%;
+  width: max-content;
   height: 100%;
   cursor: pointer;
   border-radius: 1.2rem;
@@ -67,14 +71,17 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) and (min-width: 320px) {
+
+  }
 
 }
 input {
   display: none;
 }
 .btn-hover {
-  width: 30%;
-  height: 100%;
+  width: 5rem;
+  height: 5rem;
   display: inline-block;
   padding: 1rem;
 }
@@ -101,6 +108,13 @@ label:hover {
 .slider-description {
   width: 36vw;
   overflow: hidden;
+
+
+  height: -webkit-fill-available;
+  @media (max-width: 768px) and (min-width: 320px) {
+
+    transform: translateX(-60%);
+  }
 }
 .description-list {
   padding: 0;
@@ -108,7 +122,8 @@ label:hover {
   transform: translateX(0px);
   transition: transform 1.5s ease-in;
   width: max-content;
-  padding: 1rem;
+  height: 100%;
+
 
   display: flex;
   flex-direction: row;
@@ -123,6 +138,11 @@ label:hover {
 
   width: 36vw;
   display: inline-block;
+  @media (max-width: 768px) and (min-width: 320px) {
+    font-size: 1.5rem;
+    text-align: center;
+    display: flex;
+  }
 }
 
 #btn1:checked ~ .slider > .slides {
